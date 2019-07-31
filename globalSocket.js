@@ -26,7 +26,11 @@ module.exports = class GlobalSocket {
             // })
             // https://github.com/ktpm489/node-socket.io/blob/master/server.js
             //ws://whispering-woodland-89978.herokuapp.com/skinNofity/?EIO=4&transport=websocket
-            socketChat = io('https://socketdemo1231.herokuapp.com/',{
+            // socketChat = io('https://socketdemo1231.herokuapp.com/',{
+            //     transports: ['websocket'],
+            //     upgrade: false
+            // })
+            socketChat = io('https://whispering-woodland-89978.herokuapp.com/skinNofity',{
                 transports: ['websocket'],
                 upgrade: false
             })
