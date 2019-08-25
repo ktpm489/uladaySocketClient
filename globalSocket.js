@@ -20,29 +20,33 @@ module.exports = class GlobalSocket {
             // })
             //http://uladysocket.ktpm489.now.sh/skinNofity
             // https://whispering-woodland-89978.herokuapp.com/skinNofity
-            console.log('Call Here')
+            // console.log('Call Here')
             // socketChat = io('http://whispering-woodland-89978.herokuapp.com/skinNofity', {
             //     transports: ['websocket']
             // })
             // https://github.com/ktpm489/node-socket.io/blob/master/server.js
             //ws://whispering-woodland-89978.herokuapp.com/skinNofity/?EIO=4&transport=websocket
-            // socketChat = io('https://socketdemo1231.herokuapp.com/',{
-            //     transports: ['websocket'],
-            //     upgrade: false
-            // })
-            socketChat = io('https://whispering-woodland-89978.herokuapp.com/skinNofity',{
+            // https://stark-island-55940.herokuapp.com/skinNofity
+            socketChat = io('https://stark-island-55940.herokuapp.com/skinNofity',{
                 transports: ['websocket'],
                 upgrade: false
             })
-
+            // socketChat = io('https://whispering-woodland-89978.herokuapp.com/skinNofity',{
+            //     transports: ['websocket'],
+            //     upgrade: false
+            // })
+              
+            //   socketChat = io('http://localhost:3000/skinNofity', {
+            //     transports: ['websocket']
+            // })
             socketChat.on('connect', () => {
                 console.log('connect server')
                 // msgType: 'hideSkinData','showSkinData','addSkinData'
-                let body = {
-                    msgType: 'addSkinData',
-                    data: JSON.stringify({ 'type': 1, 'data': [12, 3, 4, 35, 3453] })
-                }
-                socketChat.emit("broadcastSkinToServer", body);
+                // let body = {
+                //     msgType: 'addSkinData',
+                //     data: JSON.stringify({ 'type': 1, 'data': [12, 3, 4, 35, 3453] })
+                // }
+                // socketChat.emit("broadcastSkinToServer", body);
             })
 
             socketChat.on('broadcastSkinToClient', (e) => {
